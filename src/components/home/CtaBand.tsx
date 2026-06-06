@@ -27,7 +27,7 @@ export const CtaBand = () => (
           </svg>
         </div>
         <div>
-          <strong className="block font-medium text-white">hello@vesk.com.br</strong>
+          <strong className="block font-medium text-white">contato@vesk.com.br</strong>
           <p className="text-[13px] text-[rgb(255_255_255/0.8)]">Resposta em até 24h</p>
         </div>
       </div>

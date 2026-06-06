@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { ScrollToTop } from './components/ScrollToTop';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import Home from './pages/Home';
@@ -6,12 +7,15 @@ import PortfolioPage from './pages/PortfolioPage';
 import ProductsPage from './pages/ProductsPage';
 import ServicesPage from './pages/ServicesPage';
 import Login from './pages/Login';
+import PrivacyPage from './pages/PrivacyPage';
 import Dashboard from './admin/Dashboard';
 import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
-    <Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
       {/* Public Routes */}
       <Route path="/" element={<Home />} />
       <Route path="/sobre" element={<AboutPage />} />
@@ -19,6 +23,7 @@ function App() {
       <Route path="/produtos" element={<ProductsPage />} />
       <Route path="/portfolio" element={<PortfolioPage />} />
       <Route path="/contato" element={<ContactPage />} />
+      <Route path="/politica-privacidade" element={<PrivacyPage />} />
       <Route path="/login" element={<Login />} />
       
       {/* Protected Admin Routes */}
@@ -29,7 +34,8 @@ function App() {
 
       {/* Catch-all Not Found */}
       <Route path="*" element={<div className="font-body flex h-screen items-center justify-center bg-light text-2xl font-bold text-vesk-black">404 - Page Not Found</div>} />
-    </Routes>
+      </Routes>
+    </>
   );
 }
 
