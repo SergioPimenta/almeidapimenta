@@ -40,8 +40,9 @@ jobs:
           protocol: ftp
           # Pasta local gerada pelo build (Vite -> dist/)
           local-dir: ./dist/
-          # Pasta de destino no servidor, relativa à raiz onde o FTP faz login.
-          # Assumindo que a conta FTP entra em /home2/sergi151/ :
-          server-dir: /almeidapimenta.com.br/
+          # A conta FTP sergioadmin@almeidapimenta.com.br é restrita (chroot) à
+          # raiz do domínio (/home2/sergi151/almeidapimenta.com.br), então o
+          # destino é o próprio diretório de login.
+          server-dir: ./
           # Não apaga arquivos desconhecidos no primeiro deploy.
           dangerous-clean-slate: false
