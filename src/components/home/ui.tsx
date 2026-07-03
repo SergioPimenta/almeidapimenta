@@ -6,13 +6,14 @@ import { externalLinkProps } from '../../lib/links';
 export const NavLogo = ({ className }: { className?: string }) => (
   <Link
     to="/"
-    className={cn('inline-flex shrink-0 items-center gap-2.5 no-underline', className)}
-    aria-label="VESK — Início"
+    className={cn('inline-flex shrink-0 items-center no-underline', className)}
+    aria-label="Almeida Pimenta Advogados — Início"
   >
-    <img src="/assets/logo-mark.svg" alt="" className="h-8 w-auto md:h-9" aria-hidden />
-    <span className="font-display text-[22px] font-extrabold tracking-tight text-vesk-surface">
-      VE<span className="text-vesk-orange">SK</span>
-    </span>
+    <img
+      src="/assets/almeida-pimenta-logo.png"
+      alt="Almeida Pimenta Advogados"
+      className="h-16 w-auto md:h-20"
+    />
   </Link>
 );
 

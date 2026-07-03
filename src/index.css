@@ -23,6 +23,22 @@
   --font-display: "Syne", sans-serif;
   --font-body: "DM Sans", sans-serif;
 
+  /* ===== Almeida Pimenta Advogados — paleta da marca (navy + azul-aço) ===== */
+  --color-ap-navy: #1c3a5e;
+  --color-ap-navy-deep: #14273f;
+  --color-ap-navy-700: #274a78;
+  --color-ap-blue: #3f6592;
+  --color-ap-blue-soft: #5b81ab;
+  --color-ap-champagne: #dfe7f1;
+  --color-ap-bg: #eef2f7;
+  --color-ap-surface: #ffffff;
+  --color-ap-ink: #1f2b3d;
+  --color-ap-ink-soft: #5c6879;
+  --color-ap-line: #e0e7f0;
+
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-sans: "Poppins", system-ui, -apple-system, sans-serif;
+
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 

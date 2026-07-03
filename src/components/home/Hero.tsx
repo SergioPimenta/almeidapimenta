@@ -1,167 +1,81 @@
-import { BtnOutline, BtnPrimary, IconBox, pageHeroTitleClass } from './ui';
-import { cn } from '../../lib/cn';
-import { ArrowIcon } from './icons';
-
 const badges = [
   {
-    title: 'Soluções Personalizadas',
-    desc: 'Sob medida para cada negócio',
-    icon: (
-      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-    ),
+    label: 'Atendimento personalizado',
+    icon: <path d="M12 2l3 6 6 .9-4.5 4.3 1 6L12 16.8 6.5 19.2l1-6L3 8.9 9 8z" />,
   },
   {
-    title: 'Tecnologia Escalável',
-    desc: 'Cresce com o seu negócio',
-    icon: (
-      <>
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 8v4l3 3" />
-      </>
-    ),
+    label: 'Foco preventivo',
+    icon: <path d="M12 1l9 4v6c0 5-3.8 9.7-9 11-5.2-1.3-9-6-9-11V5l9-4zm-1.2 13.4l5-5-1.4-1.4-3.6 3.6-1.6-1.6L7.8 11z" />,
   },
   {
-    title: 'Suporte Contínuo',
-    desc: 'Acompanhamento dedicado',
-    icon: <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />,
+    label: 'Transparência total',
+    icon: <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />,
   },
 ];
 
 export const Hero = () => (
   <section
     id="inicio"
-    className="relative grid min-h-screen grid-cols-2 items-center gap-20 overflow-hidden page-px pt-40 pb-[100px]"
+    className="relative overflow-hidden bg-ap-navy-deep text-white page-px pt-[140px] pb-[110px]"
   >
+    {/* fundo com gradiente e motivo de colunas clássicas */}
     <div
-      className="pointer-events-none absolute -top-[200px] -left-[200px] h-[700px] w-[700px] rounded-full bg-[radial-gradient(circle,rgba(184,92,56,0.1)_0%,transparent_70%)]"
+      className="pointer-events-none absolute inset-0 z-0"
       aria-hidden
+      style={{
+        background:
+          'linear-gradient(100deg, #14273f 0%, #1c3a5e 55%, #274a78 100%)',
+      }}
     />
     <div
-      className="pointer-events-none absolute right-0 bottom-0 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(184,92,56,0.05)_0%,transparent_70%)]"
+      className="pointer-events-none absolute inset-y-0 right-0 z-0 w-1/2 opacity-[0.14]"
       aria-hidden
+      style={{
+        backgroundImage:
+          'repeating-linear-gradient(90deg, transparent 0 46px, rgba(223,231,241,0.6) 46px 48px, transparent 48px 96px)',
+      }}
     />
 
-    <div className="relative z-10">
-      <div className="animate-fade-up mb-7 inline-flex items-center gap-2.5 text-[11px] font-medium tracking-[0.14em] text-vesk-orange uppercase before:block before:h-px before:w-8 before:bg-vesk-orange before:content-['']">
-        Software Premium
-      </div>
-      <h1 className={cn('animate-fade-up mb-7 [animation-delay:80ms]', pageHeroTitleClass)}>
-        Tecnologia que <em className="text-vesk-orange not-italic">transforma</em> negócios.
+    <div className="relative z-10 max-w-[640px]">
+      <span className="font-sans inline-flex items-center gap-3 text-[12px] font-semibold tracking-[0.2em] text-ap-blue-soft uppercase before:block before:h-px before:w-7 before:bg-ap-blue-soft before:content-['']">
+        Almeida Pimenta Advogados
+      </span>
+      <h1 className="font-heading mt-6 text-[clamp(2.4rem,5.4vw,4rem)] leading-[1.08] font-bold">
+        Advocacia com <span className="text-ap-blue-soft">excelência</span> para o seu negócio
       </h1>
-      <p className="animate-fade-up mb-11 max-w-[440px] text-[17px] leading-[1.75] font-light text-vesk-mid [animation-delay:160ms]">
-        Desenvolvemos soluções digitais completas para impulsionar empresas, otimizar processos e gerar
-        resultados reais com tecnologia de ponta.
+      <p className="mt-6 max-w-[520px] text-[clamp(1rem,1.6vw,1.18rem)] leading-[1.75] font-light text-[rgb(223_231_241/0.85)]">
+        Assessoria jurídica empresarial em Direito Trabalhista, Tributário e Cível — preventiva e
+        contenciosa, com estratégia e resultado.
       </p>
-      <div className="animate-fade-up flex flex-wrap items-center gap-4 [animation-delay:240ms]">
-        <BtnPrimary href="#contato">
-          Solicitar orçamento
-          <ArrowIcon />
-        </BtnPrimary>
-        <BtnOutline href="/servicos">Conhecer soluções</BtnOutline>
-      </div>
-      <div className="animate-fade-up mt-[52px] flex gap-7 border-t border-vesk-border pt-10 [animation-delay:320ms]">
-        {badges.map((badge) => (
-          <div key={badge.title} className="flex items-center gap-2.5">
-            <IconBox size="md">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                {badge.icon}
-              </svg>
-            </IconBox>
-            <div>
-              <strong className="block text-[13px] font-medium text-vesk-surface">{badge.title}</strong>
-              <p className="text-xs leading-snug text-vesk-muted">{badge.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
 
-    <div className="relative z-10 animate-fade-up [animation-delay:300ms] [animation-duration:0.8s]">
-      <div className="overflow-hidden rounded-2xl border border-vesk-border bg-vesk-dark-2 shadow-[0_40px_80px_rgba(0,0,0,0.5)]">
-        <div className="flex items-center gap-3 border-b border-vesk-border px-5 py-4">
-          <div className="flex gap-1.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#28c941]" />
-          </div>
-          <span className="font-body text-xs tracking-wide text-vesk-muted">VESK Dashboard — Analytics</span>
-        </div>
-        <div className="p-6">
-          <div className="mb-5 grid grid-cols-3 gap-3">
-            <div className="rounded-[10px] border border-vesk-border bg-vesk-dark-3 p-3.5">
-              <div className="mb-1.5 text-[10px] tracking-[0.08em] text-vesk-muted uppercase">Receita</div>
-              <div className="font-display text-[22px] font-bold text-vesk-orange">R$84k</div>
-              <div className="mt-1 text-[10px] text-green-400">↑ 18% este mês</div>
-            </div>
-            <div className="rounded-[10px] border border-vesk-border bg-vesk-dark-3 p-3.5">
-              <div className="mb-1.5 text-[10px] tracking-[0.08em] text-vesk-muted uppercase">Clientes</div>
-              <div className="font-display text-[22px] font-bold text-vesk-surface">30+</div>
-              <div className="mt-1 text-[10px] text-blue-400">↑ 6 novos</div>
-            </div>
-            <div className="rounded-[10px] border border-vesk-border bg-vesk-dark-3 p-3.5">
-              <div className="mb-1.5 text-[10px] tracking-[0.08em] text-vesk-muted uppercase">Projetos</div>
-              <div className="font-display text-[22px] font-bold text-vesk-surface">50+</div>
-              <div className="mt-1 text-[10px] text-green-400">Entregues</div>
-            </div>
-          </div>
-          <div className="relative h-[120px] [&_svg]:h-full [&_svg]:w-full">
-            <svg viewBox="0 0 380 120" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#b85c38" stopOpacity="0.25" />
-                  <stop offset="100%" stopColor="#b85c38" stopOpacity="0" />
-                </linearGradient>
-              </defs>
-              <path
-                d="M0,90 C30,85 60,75 90,65 C120,55 150,40 180,35 C210,30 240,38 270,28 C300,18 330,15 380,10 L380,120 L0,120 Z"
-                fill="url(#g1)"
-              />
-              <path
-                d="M0,90 C30,85 60,75 90,65 C120,55 150,40 180,35 C210,30 240,38 270,28 C300,18 330,15 380,10"
-                fill="none"
-                stroke="#b85c38"
-                strokeWidth="2"
-              />
-              <circle cx="270" cy="28" r="4" fill="#b85c38" />
-              <circle cx="380" cy="10" r="4" fill="#b85c38" />
-            </svg>
-          </div>
-          <div className="mt-4 grid grid-cols-2 gap-3">
-            <div className="flex items-center gap-3 rounded-[10px] border border-vesk-border bg-vesk-dark-3 p-3.5">
-              <IconBox size="sm">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                </svg>
-              </IconBox>
-              <div>
-                <div className="text-[11px] text-vesk-muted">Performance</div>
-                <div className="text-[15px] font-medium text-vesk-surface">98% Uptime</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-3 rounded-[10px] border border-vesk-border bg-vesk-dark-3 p-3.5">
-              <IconBox size="sm">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
-                </svg>
-              </IconBox>
-              <div>
-                <div className="text-[11px] text-vesk-muted">Satisfação</div>
-                <div className="text-[15px] font-medium text-vesk-surface">5★ Avaliação</div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="mt-9 flex flex-wrap gap-4">
+        <a
+          href="/contato"
+          className="font-sans inline-flex items-center gap-2.5 rounded-lg bg-white px-8 py-3.5 text-sm font-semibold text-ap-navy no-underline transition-all duration-200 hover:-translate-y-0.5 hover:bg-ap-champagne"
+        >
+          Agende sua consulta
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M5 12h12l-5-5 1.4-1.4L21 12l-7.6 6.4L12 17l5-5H5z" />
+          </svg>
+        </a>
+        <a
+          href="/areas"
+          className="font-sans inline-flex items-center rounded-lg border border-[rgb(255_255_255/0.5)] px-8 py-3.5 text-sm font-medium text-white no-underline transition-all duration-200 hover:border-white hover:bg-[rgb(255_255_255/0.1)]"
+        >
+          Conheça as áreas de atuação
+        </a>
       </div>
-      <div className="absolute -bottom-5 -left-[30px] flex items-center gap-3 rounded-xl border border-vesk-border-warm bg-vesk-dark-2 px-5 py-3.5 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
-        <div className="font-display flex h-9 w-9 items-center justify-center rounded-full border-2 border-vesk-orange bg-vesk-orange-dim text-[13px] font-bold text-vesk-orange">
-          VK
-        </div>
-        <div className="text-xs">
-          <strong className="block font-medium text-vesk-surface">Novo projeto entregue</strong>
-          <span className="text-vesk-muted">TechStore — há 2 horas</span>
-        </div>
+
+      <div className="mt-11 flex flex-wrap gap-7 border-t border-[rgb(255_255_255/0.18)] pt-7">
+        {badges.map((badge) => (
+          <span key={badge.label} className="flex items-center gap-2.5 text-sm text-[rgb(223_231_241/0.85)]">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#5b81ab" className="shrink-0">
+              {badge.icon}
+            </svg>
+            {badge.label}
+          </span>
+        ))}
       </div>
     </div>
   </section>
 );
-

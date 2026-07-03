@@ -1,35 +1,48 @@
-import { BtnOutline, BtnPrimary, pageHeroTitleClass } from '../home/ui';
-import { cn } from '../../lib/cn';
-import { ArrowIcon } from '../home/icons';
-
 export const ContactHero = () => (
-  <section className="relative overflow-hidden px-12 pt-[140px] pb-20">
+  <section className="relative overflow-hidden bg-ap-navy-deep text-white page-px pt-[150px] pb-24">
     <div
-      className="pointer-events-none absolute -top-[200px] -left-[200px] h-[700px] w-[700px] rounded-full bg-[radial-gradient(circle,rgba(232,88,26,0.08)_0%,transparent_70%)]"
+      className="pointer-events-none absolute inset-0 z-0"
       aria-hidden
+      style={{ background: 'linear-gradient(100deg, #14273f 0%, #1c3a5e 55%, #274a78 100%)' }}
     />
     <div
-      className="pointer-events-none absolute right-0 bottom-0 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(232,88,26,0.04)_0%,transparent_70%)]"
+      className="pointer-events-none absolute inset-y-0 right-0 z-0 w-1/2 opacity-[0.14]"
       aria-hidden
+      style={{
+        backgroundImage:
+          'repeating-linear-gradient(90deg, transparent 0 46px, rgba(223,231,241,0.6) 46px 48px, transparent 48px 96px)',
+      }}
     />
 
     <div className="relative z-10 mx-auto max-w-3xl text-center">
-      <div className="animate-fade-up mb-7 inline-flex items-center gap-2.5 text-[11px] font-medium tracking-[0.14em] text-vesk-orange uppercase before:block before:h-px before:w-8 before:bg-vesk-orange before:content-['']">
+      <span className="font-sans inline-flex items-center justify-center gap-3 text-[12px] font-semibold tracking-[0.2em] text-ap-blue-soft uppercase">
         Contato
-      </div>
-      <h1 className={cn('animate-fade-up mb-7 [animation-delay:80ms]', pageHeroTitleClass)}>
-        Vamos conversar sobre o seu <em className="text-vesk-orange not-italic">projeto</em>
+      </span>
+      <h1 className="font-heading mt-5 text-[clamp(2.2rem,5vw,3.6rem)] leading-[1.1] font-bold">
+        Fale com um <span className="text-ap-blue-soft">advogado</span>
       </h1>
-      <p className="animate-fade-up mx-auto mb-10 max-w-2xl text-lg leading-[1.75] font-light text-vesk-mid [animation-delay:160ms]">
-        Conte sua ideia, tire dúvidas ou solicite um orçamento. Nossa equipe responde com clareza sobre
-        escopo, prazos e como a VESK pode acelerar seu negócio.
+      <p className="mx-auto mt-6 max-w-2xl text-[clamp(1rem,1.6vw,1.15rem)] leading-[1.75] font-light text-[rgb(223_231_241/0.85)]">
+        Conte a sua situação, tire dúvidas ou agende uma consulta. Nossa equipe responde com clareza
+        sobre estratégia, prazos e os próximos passos do seu caso.
       </p>
-      <div className="animate-fade-up flex flex-wrap items-center justify-center gap-4 [animation-delay:240ms]">
-        <BtnPrimary href="#formulario">
+      <div className="mt-9 flex flex-wrap justify-center gap-4">
+        <a
+          href="#formulario"
+          className="font-sans inline-flex items-center gap-2.5 rounded-lg bg-white px-8 py-3.5 text-sm font-semibold text-ap-navy no-underline transition-all duration-200 hover:-translate-y-0.5 hover:bg-ap-champagne"
+        >
           Enviar mensagem
-          <ArrowIcon />
-        </BtnPrimary>
-        <BtnOutline href="https://wa.me/554196902905">WhatsApp direto</BtnOutline>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M5 12h12l-5-5 1.4-1.4L21 12l-7.6 6.4L12 17l5-5H5z" />
+          </svg>
+        </a>
+        <a
+          href="https://wa.me/5541992034554"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-sans inline-flex items-center rounded-lg border border-[rgb(255_255_255/0.5)] px-8 py-3.5 text-sm font-medium text-white no-underline transition-all duration-200 hover:border-white hover:bg-[rgb(255_255_255/0.1)]"
+        >
+          WhatsApp direto
+        </a>
       </div>
     </div>
   </section>

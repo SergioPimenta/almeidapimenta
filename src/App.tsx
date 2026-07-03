@@ -1,8 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
+import { CookieConsent } from './components/CookieConsent';
 import { ScrollToTop } from './components/ScrollToTop';
 import AboutPage from './pages/AboutPage';
+import AreasPage from './pages/AreasPage';
 import ContactPage from './pages/ContactPage';
 import Home from './pages/Home';
+import OfficePage from './pages/OfficePage';
+import TestimonialsPage from './pages/TestimonialsPage';
 import PortfolioPage from './pages/PortfolioPage';
 import ProductsPage from './pages/ProductsPage';
 import ServicesPage from './pages/ServicesPage';
@@ -15,9 +19,13 @@ function App() {
   return (
     <>
       <ScrollToTop />
+      <CookieConsent />
       <Routes>
       {/* Public Routes */}
       <Route path="/" element={<Home />} />
+      <Route path="/escritorio" element={<OfficePage />} />
+      <Route path="/areas" element={<AreasPage />} />
+      <Route path="/depoimentos" element={<TestimonialsPage />} />
       <Route path="/sobre" element={<AboutPage />} />
       <Route path="/servicos" element={<ServicesPage />} />
       <Route path="/produtos" element={<ProductsPage />} />

@@ -3,30 +3,30 @@ import { NavLogo } from './ui';
 import { cn } from '../../lib/cn';
 
 const links = [
-  { href: '/servicos', label: 'Serviços', route: true },
-  { href: '/produtos', label: 'Produtos', route: true },
-  { href: '/portfolio', label: 'Portfólio', route: true },
-  { href: '/sobre', label: 'Sobre', route: true },
-  { href: '/contato', label: 'Contato', route: true },
+  { href: '/', label: 'Início' },
+  { href: '/escritorio', label: 'Escritório' },
+  { href: '/areas', label: 'Áreas de Atuação' },
+  { href: '/depoimentos', label: 'Depoimentos' },
+  { href: '/contato', label: 'Contato' },
 ];
 
 export const Nav = () => {
   const { pathname } = useLocation();
 
   return (
-    <nav className="fixed top-0 right-0 left-0 z-[100] flex h-[68px] items-center justify-between border-b border-vesk-border bg-[rgb(11_17_26/0.88)] backdrop-blur-xl page-px">
+    <nav className="fixed top-0 right-0 left-0 z-[100] flex h-[92px] items-center justify-between border-b border-ap-line bg-[rgb(255_255_255/0.92)] backdrop-blur-xl page-px">
       <NavLogo />
-      <ul className="flex list-none gap-9">
+      <ul className="hidden list-none items-center gap-8 lg:flex">
         {links.map((link) => {
-          const isActive = link.route && pathname === link.href;
+          const isActive = pathname === link.href || (link.href === '/' && pathname === '/');
           const className = cn(
-            'text-[13px] font-normal tracking-[0.04em] uppercase no-underline transition-colors duration-200',
-            isActive ? 'text-vesk-surface' : 'text-vesk-mid hover:text-vesk-surface',
+            'font-sans text-[13.5px] font-medium tracking-[0.02em] no-underline transition-colors duration-200',
+            isActive ? 'text-ap-navy' : 'text-ap-ink-soft hover:text-ap-navy',
           );
 
           return (
             <li key={link.href}>
-              {link.route ? (
+              {link.href.startsWith('/') && !link.href.includes('#') ? (
                 <Link to={link.href} className={className}>
                   {link.label}
                 </Link>
@@ -41,9 +41,9 @@ export const Nav = () => {
       </ul>
       <Link
         to="/contato"
-        className="rounded bg-vesk-orange px-6 py-2.5 text-[13px] font-medium tracking-wide whitespace-nowrap text-white no-underline transition-all duration-200 hover:-translate-y-px hover:bg-vesk-orange-light"
+        className="font-sans rounded-lg bg-ap-navy px-6 py-2.5 text-[13px] font-semibold tracking-wide whitespace-nowrap text-white no-underline transition-all duration-200 hover:-translate-y-px hover:bg-ap-navy-700"
       >
-        Solicitar orçamento →
+        Fale com um advogado
       </Link>
     </nav>
   );

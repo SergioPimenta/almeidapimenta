@@ -21,12 +21,14 @@ const transporter = nodemailer.createTransport({
  * @param {string} options.subject - Email subject
  * @param {string} options.text - Plain text body (optional)
  * @param {string} options.html - HTML body
+ * @param {string} options.replyTo - Reply-To address (optional)
  */
-export const sendMail = async ({ to, subject, text, html }) => {
+export const sendMail = async ({ to, subject, text, html, replyTo }) => {
   try {
     const info = await transporter.sendMail({
       from: `"App" <${process.env.EMAIL_USER}>`,
       to,
+      replyTo,
       subject,
       text: text || '',
       html,

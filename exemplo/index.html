@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ============ SEO ON-PAGE ============ -->
+<title>Sérgio Pimenta Advocacia | Advocacia Empresarial em Curitiba</title>
+<meta name="description" content="Escritório de advocacia empresarial com atuação em Direito Trabalhista, Tributário e Cível. Assessoria preventiva e contenciosa para empresas. Agende uma consulta gratuita.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.sergiopimenta.com.br/">
+
+<!-- Open Graph / redes sociais -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sérgio Pimenta Advocacia | Advocacia Empresarial">
+<meta property="og:description" content="Assessoria jurídica empresarial em Direito Trabalhista, Tributário e Cível. Consulta gratuita.">
+<meta property="og:url" content="https://www.sergiopimenta.com.br/">
+<meta property="og:image" content="https://www.sergiopimenta.com.br/img/sergio-pimenta-advocacia-og.jpg">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Performance: preconnect às fontes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- ============ SCHEMA MARKUP (JSON-LD) ============ -->
+<!-- LegalService é o tipo ideal para escritório de advocacia. Preencha endereço/geo reais. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Sérgio Pimenta Advocacia",
+  "image": "https://www.sergiopimenta.com.br/img/sergio-pimenta-advocacia-logo.png",
+  "url": "https://www.sergiopimenta.com.br/",
+  "email": "contato@sergiopimenta.com.br",
+  "telephone": ["+55-41-99203-4554", "+55-92-99132-9582"],
+  "priceRange": "$$",
+  "areaServed": "BR",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Curitiba",
+    "addressRegion": "PR",
+    "addressCountry": "BR"
+  },
+  "knowsAbout": ["Direito Trabalhista", "Direito Tributário", "Direito Cível", "Relações de Consumo", "Direito Empresarial"],
+  "sameAs": [
+    "https://www.facebook.com/sergiopimenta",
+    "https://www.linkedin.com/company/sergiopimenta",
+    "https://www.instagram.com/sergiopimenta"
+  ]
+}
+</script>
+
+<style>
+/* ============ DESIGN TOKENS ============ */
+:root{
+  --navy:#262A6E;
+  --navy-900:#1B1E52;
+  --navy-700:#2E337F;
+  --gold:#C4A56D;
+  --gold-ink:#8A6D2E;      /* dourado escurecido p/ texto sobre fundo claro (AA) */
+  --champagne:#E7D9BC;
+  --bg-light:#EEF1F6;
+  --surface:#FFFFFF;
+  --ink:#23262F;
+  --ink-soft:#5B6070;
+  --line:#E3E6EE;
+  --shadow-sm:0 2px 8px rgba(27,30,82,.06);
+  --shadow-md:0 14px 40px rgba(27,30,82,.10);
+  --shadow-lg:0 24px 60px rgba(27,30,82,.16);
+  --radius:14px;
+  --maxw:1180px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+/* ============ RESET / BASE ============ */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Poppins",system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:var(--surface);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:"Montserrat",sans-serif;color:var(--navy);margin:0;line-height:1.15}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:24px}
+.eyebrow{
+  font-family:"Montserrat",sans-serif;font-weight:700;font-size:.78rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);
+  display:inline-flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--gold)}
+.eyebrow.on-dark{color:var(--gold)}
+
+/* Acessibilidade: skip link + foco visível */
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy-900);
+  padding:10px 18px;border-radius:0 0 8px 0;font-weight:700;z-index:200}
+.skip:focus{left:0}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+/* ============ BOTÕES / CTA ============ */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;cursor:pointer;border:0;
+  font-family:"Montserrat",sans-serif;font-weight:700;font-size:.92rem;
+  letter-spacing:.02em;padding:15px 30px;border-radius:10px;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s;
+}
+.btn svg{width:18px;height:18px}
+.btn-gold{background:var(--gold);color:var(--navy-900);box-shadow:var(--shadow-sm)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(196,165,109,.45);background:#cead76}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);background:var(--navy-700)}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)}
+.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--line)}
+.btn-outline:hover{border-color:var(--navy);transform:translateY(-2px)}
+
+/* ============ TOP BAR ============ */
+.topbar{background:var(--navy-900);color:#dfe1f2;font-size:.82rem}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;
+  gap:16px;padding-block:9px;flex-wrap:wrap}
+.topbar a{display:inline-flex;align-items:center;gap:7px;padding:3px 4px;transition:color .2s}
+.topbar a:hover{color:var(--gold)}
+.topbar .contacts{display:flex;gap:20px;flex-wrap:wrap}
+.topbar .socials{display:flex;gap:6px}
+.topbar .socials a{width:30px;height:30px;justify-content:center;border-radius:7px;
+  background:rgba(255,255,255,.08)}
+.topbar svg{width:15px;height:15px;fill:currentColor}
+
+/* ============ HEADER / NAV ============ */
+.header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+.header.scrolled{box-shadow:var(--shadow-sm)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;
+  gap:20px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .mark{width:46px;height:46px;flex:none}
+.brand .name{font-family:"Playfair Display",Georgia,serif}
+.brand b{font-family:Georgia,"Times New Roman",serif;color:var(--navy);
+  font-size:1.15rem;letter-spacing:.06em;line-height:1;display:block;font-weight:700}
+.brand span{font-size:.62rem;letter-spacing:.34em;color:var(--gold-ink);
+  text-transform:uppercase;font-weight:600}
+.nav{display:flex;align-items:center;gap:32px}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav a{font-family:"Montserrat",sans-serif;font-weight:600;font-size:.92rem;color:var(--navy);
+  position:relative;padding:4px 0}
+.nav a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;
+  background:var(--gold);transition:width .3s var(--ease)}
+.nav a:hover::after,.nav a[aria-current]::after{width:100%}
+.nav a[aria-current]{color:var(--gold-ink)}
+.hamburger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:26px;height:2px;background:var(--navy);margin:5px 0;
+  transition:.3s}
+
+/* ============ HERO ============ */
+.hero{position:relative;color:#fff;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-2;background:
+  linear-gradient(90deg,rgba(27,30,82,.94) 0%,rgba(38,42,110,.82) 42%,rgba(38,42,110,.30) 100%),
+  var(--photo-hero,#20244f);
+  background-size:cover;background-position:center}
+/* Motivo de colunas clássicas (placeholder elegante — troque por foto real em --photo-hero) */
+.hero-bg::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.16;
+  background-image:repeating-linear-gradient(90deg,transparent 0 46px,rgba(231,217,188,.5) 46px 48px,transparent 48px 96px);
+  background-position:right;background-size:60% 100%;background-repeat:no-repeat}
+.hero .wrap{position:relative;padding-block:96px 108px;max-width:var(--maxw)}
+.hero-inner{max-width:620px}
+.hero h1{font-size:clamp(2.3rem,5.4vw,4rem);color:#fff;font-weight:800;
+  text-transform:uppercase;letter-spacing:.01em;margin:20px 0 0}
+.hero h1 .accent{color:var(--gold);display:block}
+.hero-sub{margin-top:22px;font-size:clamp(1rem,1.6vw,1.18rem);color:#e6e8f6;max-width:520px}
+.hero-cta{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap}
+.hero-badges{margin-top:40px;display:flex;gap:26px;flex-wrap:wrap;
+  padding-top:26px;border-top:1px solid rgba(255,255,255,.18)}
+.hero-badge{display:flex;align-items:center;gap:10px;font-size:.85rem;color:#dfe1f4}
+.hero-badge svg{width:20px;height:20px;fill:var(--gold);flex:none}
+
+/* ============ STRIP DE PROVA SOCIAL (NÚMEROS) ============ */
+.stats{background:var(--navy);color:#fff}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding-block:38px;text-align:center}
+.stat .num{font-family:"Montserrat",sans-serif;font-weight:800;font-size:clamp(1.8rem,3.4vw,2.6rem);color:var(--gold)}
+.stat .lbl{font-size:.82rem;color:#c9cbe6;letter-spacing:.02em;margin-top:2px}
+.stat{border-right:1px solid rgba(255,255,255,.12)}
+.stat:last-child{border-right:0}
+
+/* ============ SEÇÃO SOBRE ============ */
+.about{background:var(--bg-light)}
+.about .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center;padding-block:84px}
+.about h2{font-size:clamp(1.7rem,3vw,2.4rem);margin-top:16px}
+.about p{margin-top:20px;color:var(--ink-soft)}
+.about .list{margin-top:24px;display:grid;gap:14px}
+.about .list li{list-style:none;display:flex;gap:12px;align-items:flex-start;font-weight:500}
+.about .list svg{width:22px;height:22px;flex:none;margin-top:2px;fill:var(--gold-ink)}
+.about-visual{position:relative;border-radius:var(--radius);overflow:hidden;
+  min-height:380px;background:
+  linear-gradient(160deg,rgba(38,42,110,.85),rgba(27,30,82,.95)),var(--photo-about,#2a2e6e);
+  background-size:cover;background-position:center;display:flex;align-items:flex-end;
+  padding:34px;color:#fff;box-shadow:var(--shadow-md)}
+.about-visual .temple{position:absolute;top:30px;right:30px;width:72px;height:72px;opacity:.9}
+.about-visual .quote{font-family:"Montserrat",sans-serif;font-weight:600;font-size:1.15rem;line-height:1.5}
+.about-visual .quote small{display:block;margin-top:12px;font-weight:500;color:var(--gold);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
+
+/* ============ ÁREAS DE ATUAÇÃO (BENTO CARDS) ============ */
+.areas{background:var(--surface)}
+.areas .wrap{padding-block:88px}
+.section-head{text-align:center;max-width:620px;margin-inline:auto;margin-bottom:52px}
+.section-head h2{font-size:clamp(1.8rem,3.2vw,2.6rem);margin-top:14px}
+.section-head p{color:var(--ink-soft);margin-top:14px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:36px 32px 30px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+.card::before{content:"";position:absolute;left:0;top:0;height:4px;width:100%;
+  background:linear-gradient(90deg,var(--gold),var(--champagne));transform:scaleX(0);
+  transform-origin:left;transition:transform .4s var(--ease)}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:transparent}
+.card:hover::before{transform:scaleX(1)}
+.card .chip{width:60px;height:60px;border-radius:14px;display:grid;place-items:center;
+  background:linear-gradient(150deg,var(--gold),#b28f4f);box-shadow:0 8px 18px rgba(196,165,109,.35);margin-bottom:22px}
+.card .chip svg{width:30px;height:30px;fill:#fff}
+.card h3{font-size:1.25rem;margin-bottom:12px}
+.card p{color:var(--ink-soft);font-size:.94rem}
+.card .more{margin-top:22px;display:inline-flex;align-items:center;gap:8px;
+  font-family:"Montserrat",sans-serif;font-weight:700;font-size:.86rem;color:var(--navy)}
+.card .more svg{width:16px;height:16px;fill:currentColor;transition:transform .3s}
+.card:hover .more{color:var(--gold-ink)}
+.card:hover .more svg{transform:translateX(5px)}
+
+/* ============ POR QUE ESCOLHER ============ */
+.why{background:var(--bg-light)}
+.why .wrap{padding-block:84px}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+.why-item{text-align:center;padding:12px}
+.why-item .ic{width:56px;height:56px;margin:0 auto 16px;border-radius:50%;
+  display:grid;place-items:center;background:#fff;box-shadow:var(--shadow-sm)}
+.why-item .ic svg{width:26px;height:26px;fill:var(--navy)}
+.why-item h3{font-size:1.05rem;margin-bottom:8px}
+.why-item p{font-size:.88rem;color:var(--ink-soft)}
+
+/* ============ DEPOIMENTOS ============ */
+.quotes{background:var(--surface)}
+.quotes .wrap{padding-block:88px}
+.quote-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:48px}
+.qc{background:var(--bg-light);border-radius:var(--radius);padding:34px 32px;position:relative}
+.qc .mark{font-family:Georgia,serif;font-size:3.4rem;line-height:.6;color:var(--gold);
+  opacity:.5}
+.qc p{margin-top:10px;color:var(--ink);font-style:italic}
+.qc .who{margin-top:22px;display:flex;align-items:center;gap:14px}
+.qc .av{width:46px;height:46px;border-radius:50%;background:var(--navy);color:var(--gold);
+  display:grid;place-items:center;font-family:"Montserrat",sans-serif;font-weight:700}
+.qc .who b{display:block;font-family:"Montserrat",sans-serif;color:var(--navy);font-size:.95rem}
+.qc .who small{color:var(--ink-soft)}
+.qc .stars{color:var(--gold);letter-spacing:2px;font-size:.9rem}
+
+/* ============ CTA FINAL ============ */
+.finalcta{position:relative;color:#fff;overflow:hidden;isolation:isolate}
+.finalcta-bg{position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(rgba(27,30,82,.92),rgba(27,30,82,.92)),var(--photo-cta,#1b1e52);
+  background-size:cover;background-position:center}
+.finalcta .wrap{padding-block:92px;text-align:center;max-width:760px}
+.finalcta h2{color:#fff;font-size:clamp(1.9rem,3.6vw,2.8rem);margin-top:16px}
+.finalcta p{margin-top:18px;color:#dfe1f4;font-size:1.06rem}
+.finalcta .row{margin-top:34px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.finalcta .trust{margin-top:26px;font-size:.85rem;color:#c9cbe6}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--navy-900);color:#c9cbe6;font-size:.9rem}
+.footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1.2fr 1fr;gap:40px;padding-block:64px 40px}
+.footer h4{color:#fff;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.footer a:hover{color:var(--gold)}
+.footer .fbrand b{font-family:Georgia,serif;color:#fff;font-size:1.3rem;letter-spacing:.06em}
+.footer .fbrand span{display:block;font-size:.62rem;letter-spacing:.34em;color:var(--gold);text-transform:uppercase;margin-top:4px}
+.footer .fbrand p{margin-top:16px;max-width:280px;line-height:1.6}
+.footer .contact li{display:flex;gap:10px;align-items:flex-start}
+.footer .contact svg{width:16px;height:16px;fill:var(--gold);flex:none;margin-top:4px}
+.footer .fsoc{display:flex;gap:10px;margin-top:18px}
+.footer .fsoc a{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.08);
+  display:grid;place-items:center}
+.footer .fsoc svg{width:16px;height:16px;fill:#fff}
+.footer .fsoc a:hover{background:var(--gold)}
+.copy{border-top:1px solid rgba(255,255,255,.1)}
+.copy .wrap{display:flex;justify-content:space-between;align-items:center;
+  padding-block:20px;font-size:.82rem;flex-wrap:wrap;gap:10px}
+
+/* ============ BACK TO TOP ============ */
+.totop{position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:12px;
+  background:var(--gold);border:0;cursor:pointer;display:grid;place-items:center;
+  box-shadow:var(--shadow-md);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:90}
+.totop.show{opacity:1;pointer-events:auto}
+.totop:hover{transform:translateY(-4px)}
+.totop svg{width:20px;height:20px;fill:var(--navy-900)}
+
+/* ============ MICROANIMAÇÕES (REVEAL) ============ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ RESPONSIVO (mobile-first refinements) ============ */
+@media(max-width:940px){
+  .about .wrap{grid-template-columns:1fr;gap:40px}
+  .cards{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .footer .wrap{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .nav{position:fixed;inset:0 0 0 auto;width:min(78%,320px);background:#fff;
+    flex-direction:column;align-items:flex-start;padding:90px 30px;gap:26px;
+    transform:translateX(100%);transition:transform .35s var(--ease);box-shadow:var(--shadow-lg)}
+  .nav.open{transform:none}
+  .nav ul{flex-direction:column;gap:22px}
+  .hamburger{display:block;z-index:110}
+  .nav .btn{width:100%;justify-content:center}
+  .stats .wrap{grid-template-columns:1fr 1fr;gap:22px 10px}
+  .stat:nth-child(2){border-right:0}
+  .cards,.quote-grid,.why-grid,.footer .wrap{grid-template-columns:1fr}
+  .topbar .contacts{gap:14px}
+  .hero .wrap{padding-block:64px 72px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<!-- ========== TOP BAR ========== -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="contacts">
+      <a href="tel:+5541992034554" aria-label="Telefone Curitiba">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+        (41) 99203-4554</a>
+      <a href="https://wa.me/554199203454" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.1-1.3A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6a9.3 9.3 0 01-3.8-3.4c-.3-.4-.7-1-.7-1.9s.5-1.4.7-1.6c.2-.2.4-.3.6-.3h.4c.1 0 .3 0 .5.4l.7 1.6c0 .2.1.3 0 .5l-.3.4-.3.3c-.1.1-.2.2-.1.4.2.3.7 1.1 1.4 1.7.9.8 1.6 1 1.9 1.2.2.1.4 0 .5-.1l.6-.7c.2-.2.3-.2.5-.1l1.5.7c.3.1.4.2.5.3 0 .1 0 .5-.2 1z"/></svg>
+        WhatsApp</a>
+      <a href="mailto:contato@sergiopimenta.com.br" aria-label="E-mail">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4a2 2 0 01-2-2V6c0-1.1.9-2 2-2zm8 7L4 6.2V6l8 5 8-5v.2L12 11z"/></svg>
+        contato@sergiopimenta.com.br</a>
+    </div>
+    <div class="socials">
+      <a href="https://facebook.com/sergiopimenta" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13 22v-8h2.7l.4-3H13V9c0-.9.3-1.5 1.6-1.5H16V5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.8 1.4-3.8 3.9V11H7.5v3H10v8h3z"/></svg></a>
+      <a href="https://linkedin.com/company/sergiopimenta" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.9 8.5H4V20h2.9V8.5zM5.4 3.9A1.7 1.7 0 105.4 7.3a1.7 1.7 0 000-3.4zM20 20v-6.3c0-3.1-1.7-4.6-3.9-4.6-1.8 0-2.6 1-3 1.7V8.5H10V20h2.9v-6.1c0-1.6.9-2.1 1.8-2.1s1.7.6 1.7 2.1V20H20z"/></svg></a>
+      <a href="https://instagram.com/sergiopimenta" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.6 4.8-4.9 4.9-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 4 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 3.1A6.7 6.7 0 1012 18.7 6.7 6.7 0 0012 5.3zm0 11a4.3 4.3 0 110-8.6 4.3 4.3 0 010 8.6zm6.9-11.3a1.6 1.6 0 11-3.2 0 1.6 1.6 0 013.2 0z"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== HEADER ========== -->
+<header class="header" id="header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Sérgio Pimenta Advocacia — início">
+      <svg class="mark" viewBox="0 0 60 60" aria-hidden="true"><rect width="60" height="60" rx="10" fill="#262A6E"/><text x="30" y="40" text-anchor="middle" font-family="Georgia,serif" font-size="30" font-weight="700" fill="#fff">SP</text></svg>
+      <span class="name"><b>Sérgio Pimenta</b><span>Advogados</span></span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="/escritorio">Escritório</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contato">Contato</a></li>
+      </ul>
+      <a class="btn btn-navy" href="#contato">Fale com um advogado</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <!-- Troque a imagem real das colunas em --photo-hero. Ex.: style="--photo-hero:url('/img/colunas-tribunal-justica.jpg')" -->
+  <div class="hero-bg" role="img" aria-label="Colunas de um tribunal clássico simbolizando a Justiça"></div>
+  <div class="wrap">
+    <div class="hero-inner reveal">
+      <span class="eyebrow on-dark">Sérgio Pimenta Advocacia</span>
+      <h1>Advocacia com <span class="accent">excelência</span> para o seu negócio</h1>
+      <p class="hero-sub">Assessoria jurídica empresarial em Direito Trabalhista, Tributário e Cível — preventiva e contenciosa, com estratégia e resultado.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#contato">Agende sua consulta gratuita
+          <svg viewBox="0 0 24 24"><path d="M5 12h12l-5-5 1.4-1.4L21 12l-7.6 6.4L12 17l5-5H5z"/></svg></a>
+        <a class="btn btn-ghost" href="#areas">Conheça as áreas de atuação</a>
+      </div>
+      <div class="hero-badges">
+        <span class="hero-badge"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 .9-4.5 4.3 1 6L12 16.8 6.5 19.2l1-6L3 8.9 9 8z"/></svg> Atendimento personalizado</span>
+        <span class="hero-badge"><svg viewBox="0 0 24 24"><path d="M12 1l9 4v6c0 5-3.8 9.7-9 11-5.2-1.3-9-6-9-11V5l9-4zm-1.2 13.4l5-5-1.4-1.4-3.6 3.6-1.6-1.6L7.8 11z"/></svg> Foco preventivo</span>
+        <span class="hero-badge"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Transparência total</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROVA SOCIAL: NÚMEROS ========== -->
+<section class="stats" aria-label="Números do escritório">
+  <div class="wrap">
+    <div class="stat reveal"><div class="num">+15</div><div class="lbl">Anos de experiência</div></div>
+    <div class="stat reveal"><div class="num">+500</div><div class="lbl">Casos conduzidos</div></div>
+    <div class="stat reveal"><div class="num">3</div><div class="lbl">Áreas de especialização</div></div>
+    <div class="stat reveal"><div class="num">98%</div><div class="lbl">Clientes satisfeitos</div></div>
+  </div>
+</section>
+
+<!-- ========== SOBRE ========== -->
+<section class="about" id="escritorio">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Sobre o escritório</span>
+      <h2>Uma equipe qualificada ao lado da sua empresa</h2>
+      <p>Nossa equipe de advogados altamente qualificados tem experiência em diversas áreas do direito, incluindo empresarial, trabalhista, civil, tributário e criminal. Estamos constantemente atualizando nossos conhecimentos jurídicos para garantir a melhor representação possível aos nossos clientes.</p>
+      <ul class="list">
+        <li><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Atuação consultiva e contenciosa</li>
+        <li><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Estratégias sob medida para cada empresa</li>
+        <li><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Comunicação clara em cada etapa do processo</li>
+      </ul>
+    </div>
+    <!-- Troque por foto/estátua real em --photo-about -->
+    <div class="about-visual reveal">
+      <svg class="temple" viewBox="0 0 64 64" fill="#E7D9BC" aria-hidden="true"><path d="M32 4L4 18v4h56v-4L32 4zM10 26v22h6V26h-6zm12 0v22h6V26h-6zm12 0v22h6V26h-6zm12 0v22h6V26h-6zM4 52v6h56v-6H4z"/></svg>
+      <p class="quote">“Justiça é a constante e perpétua vontade de dar a cada um o que é seu.”
+        <small>Compromisso Sérgio Pimenta Advocacia</small></p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ÁREAS DE ATUAÇÃO ========== -->
+<section class="areas" id="areas">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center">Áreas de atuação</span>
+      <h2>Soluções jurídicas para cada desafio</h2>
+      <p>Atendimento especializado com foco no melhor interesse e na segurança jurídica da sua empresa.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="chip"><svg viewBox="0 0 24 24"><path d="M10 4h4l1 3h5v13H4V7h5l1-3zm2 6a4 4 0 100 8 4 4 0 000-8z"/></svg></div>
+        <h3>Trabalhista</h3>
+        <p>Assistência a empresas na esfera trabalhista, tanto contenciosa quanto consultiva/preventiva, orientando quanto à correta aplicação da legislação individual e coletiva.</p>
+        <a class="more" href="/trabalhista">Saiba mais sobre Trabalhista
+          <svg viewBox="0 0 24 24"><path d="M5 12h12l-5-5 1.4-1.4L21 12l-7.6 6.4L12 17l5-5H5z"/></svg></a>
+      </article>
+      <article class="card reveal">
+        <div class="chip"><svg viewBox="0 0 24 24"><path d="M12 1v3m0 16v3M4.2 4.2l2.1 2.1m11.4 11.4l2.1 2.1M1 12h3m16 0h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1M12 7a5 5 0 100 10 5 5 0 000-10z"/></svg></div>
+        <h3>Tributário</h3>
+        <p>Atuamos contra interpretações incorretas da Administração Pública, buscando a redução ou eliminação de tributos indevidos e obrigações acessórias ilegais para a regularidade fiscal.</p>
+        <a class="more" href="/tributario">Saiba mais sobre Tributário
+          <svg viewBox="0 0 24 24"><path d="M5 12h12l-5-5 1.4-1.4L21 12l-7.6 6.4L12 17l5-5H5z"/></svg></a>
+      </article>
+      <article class="card reveal">
+        <div class="chip"><svg viewBox="0 0 24 24"><path d="M9 11l-4 4 2 2 4-4m4-4l4-4-2-2-4 4M7 7l10 10"/><path d="M8 3l3 3-2 2-3-3zm8 12l3 3-2 2-3-3z"/></svg></div>
+        <h3>Cível e Relações de Consumo</h3>
+        <p>Especialização no atendimento a pessoas jurídicas na área cível e de relações de consumo, assessorando empresas em litígios judiciais e demandas extrajudiciais.</p>
+        <a class="more" href="/civel">Saiba mais sobre Cível
+          <svg viewBox="0 0 24 24"><path d="M5 12h12l-5-5 1.4-1.4L21 12l-7.6 6.4L12 17l5-5H5z"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== POR QUE ESCOLHER ========== -->
+<section class="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center">Por que a Sérgio Pimenta</span>
+      <h2>Segurança jurídica que gera resultado</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.8 5.7 21l2.3-7.2-6-4.4h7.6z"/></svg></div><h3>Experiência empresarial</h3><p>Advogados com atuação consolidada no ambiente corporativo.</p></div>
+      <div class="why-item reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 1l9 4v6c0 5-3.8 9.7-9 11-5.2-1.3-9-6-9-11V5z"/></svg></div><h3>Foco preventivo</h3><p>Antecipamos riscos antes que virem processos e custos.</p></div>
+      <div class="why-item reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 5v6l4 2-.8 1.7L11 14V7z"/></svg></div><h3>Agilidade</h3><p>Respostas rápidas e acompanhamento próximo de cada caso.</p></div>
+      <div class="why-item reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11c0 4 2.5 7.4 6 8.6V22h6v-2.4c3.5-1.2 6-4.6 6-8.6 0-5-4-9-9-9zm-1 13l-3-3 1.4-1.4L11 12.2l4.6-4.6L17 9z"/></svg></div><h3>Transparência</h3><p>Honorários e etapas explicados com clareza, sem surpresas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DEPOIMENTOS (substitua pelos reais) ========== -->
+<section class="quotes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center">Depoimentos</span>
+      <h2>A confiança de quem já é cliente</h2>
+    </div>
+    <div class="quote-grid">
+      <figure class="qc reveal">
+        <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <div class="mark" aria-hidden="true">”</div>
+        <blockquote><p>Resolveram uma questão trabalhista complexa da nossa empresa com estratégia e clareza. Atendimento próximo do início ao fim.</p></blockquote>
+        <figcaption class="who"><span class="av" aria-hidden="true">MR</span><span><b>Marcos R.</b><small>Diretor — Indústria (exemplo)</small></span></figcaption>
+      </figure>
+      <figure class="qc reveal">
+        <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <div class="mark" aria-hidden="true">”</div>
+        <blockquote><p>A revisão tributária identificou tributos que pagávamos indevidamente. Profissionalismo e transparência do começo ao fim.</p></blockquote>
+        <figcaption class="who"><span class="av" aria-hidden="true">AC</span><span><b>Ana C.</b><small>Sócia — Comércio (exemplo)</small></span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA FINAL ========== -->
+<section class="finalcta" id="contato">
+  <div class="finalcta-bg" role="img" aria-label="Escadaria clássica em mármore vista de cima"></div>
+  <div class="wrap">
+    <span class="eyebrow on-dark" style="justify-content:center">Consulta jurídica</span>
+    <h2>Tem um caso desafiador? Fale com um especialista hoje.</h2>
+    <p>Agende uma consulta gratuita e sem compromisso. Analisamos sua situação e mostramos os próximos passos.</p>
+    <div class="row">
+      <a class="btn btn-gold" href="mailto:contato@sergiopimenta.com.br">Agende sua consulta gratuita
+        <svg viewBox="0 0 24 24"><path d="M5 12h12l-5-5 1.4-1.4L21 12l-7.6 6.4L12 17l5-5H5z"/></svg></a>
+      <a class="btn btn-ghost" href="https://wa.me/554199203454">Chamar no WhatsApp</a>
+    </div>
+    <p class="trust">Resposta em até 24h úteis • Atendimento presencial e on-line</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="fbrand">
+      <b>Sérgio Pimenta</b><span>Advogados</span>
+      <p>Advocacia empresarial com excelência em Direito Trabalhista, Tributário e Cível.</p>
+      <div class="fsoc">
+        <a href="https://facebook.com/sergiopimenta" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13 22v-8h2.7l.4-3H13V9c0-.9.3-1.5 1.6-1.5H16V5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.8 1.4-3.8 3.9V11H7.5v3H10v8h3z"/></svg></a>
+        <a href="https://linkedin.com/company/sergiopimenta" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.9 8.5H4V20h2.9V8.5zM5.4 3.9A1.7 1.7 0 105.4 7.3a1.7 1.7 0 000-3.4zM20 20v-6.3c0-3.1-1.7-4.6-3.9-4.6-1.8 0-2.6 1-3 1.7V8.5H10V20h2.9v-6.1c0-1.6.9-2.1 1.8-2.1s1.7.6 1.7 2.1V20H20z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/escritorio">Escritório</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contato">Contato</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <ul class="contact">
+        <li><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1z"/></svg><a href="tel:+5541992034554">(41) 99203-4554 / (92) 99132-9582</a></li>
+        <li><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4a2 2 0 01-2-2V6c0-1.1.9-2 2-2zm8 7L4 6.2V6l8 5 8-5v.2z"/></svg><a href="mailto:contato@sergiopimenta.com.br">contato@sergiopimenta.com.br</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="/politica-de-privacidade">Política de Privacidade</a></li>
+        <li><a href="/cookies">Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="copy">
+    <div class="wrap">
+      <span>© <span id="year"></span> Sérgio Pimenta Advocacia. Todos os direitos reservados.</span>
+      <span>Curitiba • PR</span>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" id="totop" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24"><path d="M12 5l7 7-1.4 1.4L13 8.8V20h-2V8.8L6.4 13.4 5 12z"/></svg>
+</button>
+
+<script>
+// Ano dinâmico
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Menu mobile
+const burger = document.getElementById('hamburger');
+const nav = document.getElementById('nav');
+burger.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open);
+  burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+});
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  nav.classList.remove('open'); burger.setAttribute('aria-expanded', false);
+}));
+
+// Sombra no header + botão voltar ao topo
+const header = document.getElementById('header');
+const totop = document.getElementById('totop');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 10);
+  totop.classList.toggle('show', window.scrollY > 500);
+}, {passive:true});
+totop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+// Reveal ao rolar (respeita prefers-reduced-motion)
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!reduce && 'IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+}
+</script>
+</body>
+</html>

@@ -1,24 +1,22 @@
 import { About } from '../components/home/About';
-import { Contact } from '../components/home/Contact';
-import { CtaBand } from '../components/home/CtaBand';
+import { FinalCta } from '../components/home/FinalCta';
 import { Hero } from '../components/home/Hero';
-import { Portfolio } from '../components/home/Portfolio';
-import { Process } from '../components/home/Process';
-import { Products } from '../components/home/Products';
-import { Services } from '../components/home/Services';
+import { PracticeAreas } from '../components/home/PracticeAreas';
+import { Stats } from '../components/home/Stats';
+import { Testimonials } from '../components/home/Testimonials';
+import { WhyUs } from '../components/home/WhyUs';
 import { PublicLayout } from '../components/layout/PublicLayout';
 
 const Home = () => (
   <PublicLayout>
-    <main>
+    <main className="bg-ap-bg font-sans text-ap-ink">
       <Hero />
-      <Services />
-      <Products />
-      <Portfolio />
-      <Process />
+      <Stats />
       <About />
-      <CtaBand />
-      <Contact />
+      <PracticeAreas />
+      <WhyUs />
+      <Testimonials />
+      <FinalCta />
     </main>
   </PublicLayout>
 );
